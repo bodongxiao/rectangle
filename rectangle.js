@@ -1,18 +1,12 @@
 /* global Rectangle: true */
-$(function() {
-  var $width = $('#width'),
-      $height = $('#height'),
-      $btnCal = $('#calculate'),
-      $perimeter = $('#perimeter'),
-      $area = $('#area');
+var wid = document.getElementById('width');
+var hei = document.getElementById('height');
+var btn = document.getElementById('calculate');
+var per = document.getElementById('perimeter');
+var are = document.getElementById('area');
 
-  $btnCal.click(function(){
-    var w = $width.val(),
-        h = $height.val();
+function doit(){
+    per.value = 2*wid.value + 2*hei.value;
+    are.value = wid.value * hei.value;
 
-    var r = new Rectangle(w, h);
-
-    $perimeter.val(r.perimeter());
-    $area.val(r.area());
-  });
-});
+}
